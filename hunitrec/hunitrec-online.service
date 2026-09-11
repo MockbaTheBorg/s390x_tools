@@ -1,0 +1,12 @@
+[Unit]
+Description=Bring Hercules unit-record devices (hunitrec) online
+After=systemd-modules-load.service
+Wants=systemd-modules-load.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/local/sbin/hunitrec-online.sh
+
+[Install]
+WantedBy=multi-user.target
